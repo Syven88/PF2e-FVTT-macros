@@ -1,7 +1,8 @@
 /* Trap detection
 This macro is set to work with the Hidden Pit hazard on page 522 of the CRB, but it is intended to be changed to suit your hazard
+Note that the macro will only trigger if the token has the "Search" effect active from the PF2E exploration effects module. This way, tokens that aren't searching don't get a chance to spot the hazard.
 
-Required Macros: Monk's Active Tiles 
+Required Macros: Monk's Active Tiles, PF2E exploration effects
 
 Tile Settings:
     History: on
