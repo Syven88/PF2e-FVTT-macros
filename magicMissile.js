@@ -6,7 +6,6 @@ For staves please use a spellcasting entry due to the nature of how staves work.
 The macro will not prompt for trick magic item due to DCs being variable. May change this in the future.
 
 This macro was written by Symon S and was modified slightly by Syven to include jb2a's animations.
-TODO: fire correct amount of missile per action for higher spell levels
 */
 
 const mani = ["wand-of-manifold-missiles-1st-level-spell","wand-of-manifold-missiles-3rd-level-spell","wand-of-manifold-missiles-5th-level-spell","wand-of-manifold-missiles-7th-level-spell"]
@@ -117,7 +116,7 @@ fmm.forEach(a => {
 	let dam = token.actor.itemTypes.feat.some(ds => ds.slug === 'dangerous-sorcery') ? formula.repeat(a.num).replace(/]{/g,'] + {') + ` + {${mmch.level}}[status,force]` : formula.repeat(a.num).replace(/]{/g,'] + {');
 	var droll = new Roll(dam);
         droll.toMessage({ flavor: `<strong>${a.num} Magic Missile(s) targeting ${a.name}</strong><br><a class="entity-link content-link" data-pack="pf2e.spells-srd" data-id="gKKqvLohtrSJj3BM"><strong>Magic Missile</strong></a>`, speaker: ChatMessage.getSpeaker() });
-    new Sequence()
+ 	new Sequence()
         .effect()
             .file(`jb2a.magic_missile.green`)
             .atLocation(canvas.tokens.controlled[0])
