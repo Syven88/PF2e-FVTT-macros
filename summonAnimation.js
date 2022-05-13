@@ -17,7 +17,7 @@ if (caster == undefined){
     ui.notifications.error("Please select only one token.")
     return;
 }else if (Array.from(game.actors.filter(n => n.name == minionName))[0] == undefined){
-    ui.notifications.error("The minion specified does not exist. It's name may be typed incorrectly.")
+    ui.notifications.error("The minion specified does not exist. It's name may be typed incorrectly, or it may not exist as an item in the actors tab.")
     return;
 }
 
