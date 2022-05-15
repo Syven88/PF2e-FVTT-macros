@@ -31,8 +31,12 @@ let profReq = 0 //the required proficiency level to spot the hazard
 
 perceptionCheck()
 
+// console.log(`Search exists: `+Array.from(token.actor.items).filter(n => n.name == "Search").length);
+// let effectlist = JSON.stringify(Array.from(token.actor.items).filter(n => n.type == "effect"))
+// console.log(`Effects active: ` + effectlist);
+
 async function perceptionCheck(){
-        if(Array.from(token.actor.items).filter(n => n.name == "Search").length == 1 && token.actor.attributes.perception.rank >= profReq){
+        if(Array.from(token.actor.items).filter(n => n.name == "Search" && n.type == "effect").length == 1 && token.actor.attributes.perception.rank >= profReq){
             let spotCheck = new Roll(`1d20 + ${token.actor.data.data.attributes.perception.value}`)
             await spotCheck.evaluate()
             console.log(spotCheck.total);   
